@@ -1,0 +1,240 @@
+---
+title: "Innovation in Constitutional Decision-Making"
+author: 
+  - name: Andrés Castro Araújo
+institute: 
+  - Duke University
+format: 
+  revealjs: 
+    theme: [styles.scss]
+    fig-align: center
+    date: last-modified
+    date-format: long
+    slide-number: true
+    title-slide-attributes: 
+      data-background-color: "#4C837B"
+editor: visual
+bibliography: references.bib
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(ccc)
+library(tidyverse)
+
+theme_set(
+  theme_light(base_family = "Crimson Text") + 
+    theme(strip.background = element_rect(fill = "#4C4C4C"))
+)
+```
+
+# Background {background-color="#4C837B"}
+
+## Motivation
+
+::: {.incremental .fade-in-then-semi-out}
+-   Sociologists use [citation networks]{.smallcaps} to study innovation, but they mostly focus on "science" (*publications*) or "technology" (*patents*).
+
+    ::: auth-reference
+    These networks are embedded in environments that reward novelty and “fresh ideas.”
+    :::
+
+-   Reasoning from [precedent]{.smallcaps} means that you are constrained by past decisions. At the extreme, it means that you will have to make—*or at least accept*—decisions that you personally dislike.
+
+    ::: auth-reference
+    Doing the "wrong" thing just because it has been done before (e.g., concurring opinions).
+    :::
+
+-   Sociologists who study law tend to focus on “external” determinants of legal change (i.e., power, public opinion, electoral politics).
+
+    ::: auth-reference
+    Legal reasoning is a black-box.
+    :::
+:::
+
+## Innovation
+
+::: fragment
+**Definition**
+
+An innovative legal argument is any configuration of cultural elements that’s *useful* for judges attempting to decide a [hard case]{.smallcaps}.
+:::
+
+:::: fragment
+**Dependent Variable**
+
+[Cumulative citation count]{.smallcaps} as an indicator of innovation because it captures the extent to which other judges find a legal argument to be *useful* in deciding future cases.
+
+::: auth-reference
+@leahey2014
+:::
+::::
+
+## Two Hypotheses
+
+::: incremental
+-   $H_1$ : Innovative legal arguments rely on the novel combination of legal principles. As such they will contain traces of "principle-based" argumentation.
+
+-   $H_2$ : Innovative legal arguments will contain traces of what @merton1968 calls "adumbration," which is the motivated search for long-forgotten cases that can then be reinterpreted in novel ways, allowing for judges to hide their creative work behind the veil of tradition.
+:::
+
+## How it started, how it's going
+
+::: incremental
+-   Personal bias
+
+    ::: auth-reference
+    Legal innovation usually carries a positive connotation… *in Colombia*
+    :::
+
+-   Bad influence
+
+    ::: auth-reference
+    Philosophy: Ronald Dworkin [-@dworkin1975; -@dworkin1985; -@dworkin1986]
+
+    Networks: @uzzi2013, @mcmahan2021, @funk2017
+    :::
+
+-   *Resentment*
+
+    ::: auth-reference
+    Needs major re-thinking
+    :::
+:::
+
+# Data {background-color="#4C837B"}
+
+## Colombian Constitutional Court (CCC)
+
+Colombia changed its Constitution in 1991 and created a new high court.
+
+It is a very prolific court (\~ 900 decisions per year).
+
+-   `r scales::comma(nrow(ccc::metadata))` rulings made by the CCC during the `r paste(range(ccc::metadata$year), collapse = "-")` period.
+
+-   Citations to previous decisions, date, type of ruling, keywords, etc.
+
+-   Made publicly available: <https://acastroaraujo.github.io/ccc/>
+
+## Number of decision per year
+
+```{r}
+metadata |> 
+  filter(year < max(year)) |> 
+  count(year) |> 
+  ggplot(aes(year, n)) +
+  geom_line() +
+  labs(y = "count")
+  #scale_y_continuous(labels = scales::comma, breaks = seq(0, 1600, by = 200)) #
+```
+
+## Citations
+
+```{r}
+metadata |> 
+  pivot_longer(c(indegree, outdegree), names_to = "dtype", values_to = "degree") |> 
+  mutate(dtype = case_when(
+    dtype == "indegree" ~ "Average Inward Citations (in-degree)",
+    dtype == "outdegree" ~ "Average Outward Citations (out-degree)"
+  )) |> 
+  ggplot(aes(year, degree)) + 
+  stat_summary(
+    fun.data = \(x) mean_cl_boot(x, conf.int = 0.68), fatten = 1/2,
+    shape = 21, fill = "white", size = 1/10
+  ) + 
+  facet_wrap(~ dtype, ncol = 1) + 
+  scale_x_continuous(labels = seq(1992, 2024, 4), breaks = seq(1992, 2024, 4)) +
+  labs(y = NULL, x = NULL) +
+  theme(strip.text.y = element_text(angle = 0))
+```
+
+## H~1~: "Principle-Based Argumentation" Measurement
+
+::: incremental
+-   Create a list of 238 principles and 510 rights.
+
+-   Create a network that links these keywords through their number of common decisions.
+
+-   Count the number of keywords contained within each decision and determine whether each pairing $n \choose 2$ are conventional, unconventional, or neither.
+
+-   Extract types of pairings using a "fixed degree sequence model"
+
+    ::: auth-reference
+    @neal2014; @uzzi2013
+    :::
+:::
+
+## A *what* model?
+
+```{r}
+#| echo: false
+
+fig_svg<- cowplot::ggdraw() + 
+  cowplot::draw_image("images/backbone-logic.svg")
+
+plot(fig_svg)
+```
+
+## Structure of Principles Joined by "Typical" Ties
+
+![](images/clipboard-796059224.png)
+
+## H~2~: "Adumbration" Measurement
+
+::: incremental
+-   Look at the cases contained in each ruling
+
+-   Count the number of days that have passed since each of these references was cited elsewhere.
+
+-   Count the number of "long-forgotten" cases by looking at year-specific thresholds (99^th^ percentile of distribution)
+:::
+
+------------------------------------------------------------------------
+
+![](images/adum-three-cases-1.png){fig-align="center"}
+
+## Results
+
+| Model          | ELPD (difference) | Standard Error (difference) |
+|----------------|-------------------|-----------------------------|
+| H~1~ and H~2~  | $0.00$            | $0.00$                      |
+| Just H~1~      | $-1.11$           | $2.57$                      |
+| Just H~2~      | $-427.80$         | $37.21$                     |
+| Baseline model | $-431.40$         | $37.33$                     |
+
+<aside>
+
+Baseline model (negative binomial regression):
+
+$$
+\log(\lambda) = f\text{(time, outdegree, type, topic)}
+$$
+
+</aside>
+
+## Problems
+
+::: incremental
+-   Coefficients are basically uninterpretable
+
+    ::: auth-reference
+    E.g., an increase of one standard deviation in the number of “typical parings” (or 4.6 atypical pairings) is associated—all else equal—with a 26% increase in cumulative citation counts
+    :::
+
+-   Too many moving parts in measurement of "independent" variables
+
+-   Is innovation really captured by the cumulative citation count? Some hard cases are "hard" precisely because they deal with very *rare* situations.
+
+-   It is *boring!*
+
+-   Ignores the people making the decisions (but more data coming soon).
+
+-   Silence on whether legal principles are (1) “useful decision-making tools” or just (2) “pretty playthings” used to make post-hoc justifications.
+:::
+
+# Thank you
+
+## References {visibility="uncounted"}

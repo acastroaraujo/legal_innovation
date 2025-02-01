@@ -1,0 +1,62 @@
+
+/*-- scss:defaults --*/
+
+@import url('https://www.cssfontstack.com/Optima');
+$optima-font: 'Optima', sans-serif;
+
+@import url('https://online-fonts.com/fonts/century-gothic');
+$century-gothic: "Century Gothic", sans-serif;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+$fira-font: 'Fira Code', monospace; 
+
+$font-family-sans-serif: $century-gothic;
+$font-family-monospace: $fira-font; 
+
+$presentation-heading-font: $century-gothic;
+
+$presentation-font-size-root: 30px;
+$presentation-h1-font-size: 2.2em;
+$presentation-line-height: 1.5;
+
+$link-color: #BC3B40;
+$code-block-bg: #F4F4F4;
+$presentation-heading-color: #4C837B !default;
+$body-color: #4C837B;
+$body-bg: #E8E1C9;
+
+/*-- scss:rules --*/
+
+.reveal section h1 {
+  color: #E8E1C9; 
+}
+
+.smallcaps {
+  font-variant: small-caps;
+}
+
+.reveal .slide aside {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.8em;
+  opacity: 0.7;
+  color: #4C837B;
+}
+
+.auth-reference {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.quarto-title-authors {
+  padding-top: 15%;
+  font-size: 1.5em;
+  color: #E8E1C9;
+}
+
+.date {
+  padding-top: 10%;
+  font-size: 1.2em;
+  color: #E8E1C9;
+}

@@ -142,7 +142,7 @@ This measurement is henceforth labeled "adumbration" but it should be noted that
 
 | Model | ELPD (difference) | Standard Error (difference) |
 |------------------------|------------------------|------------------------|
-| H~1~ and H~2~ | $0.00$ | 0.00 |
+| H~1~ and H~2~ | $0.00$ | $0.00$ |
 | Just H~1~ | $-1.11$ | $2.57$ |
 | Just H~2~ | $-427.80$ | $37.21$ |
 | Baseline model, without variables for principle-based argumentation (H~1~) and adumbration (H~2~) | $-431.40$ | $37.33$ |
