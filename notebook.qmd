@@ -1,0 +1,132 @@
+---
+title: "Notebook"
+format: html
+---
+
+## General
+
+The second project studies judicial discretion by looking at hard cases. These are cases for which the result is not clearly dictated by statute or precedent. Importantly, these cases create a pressure for innovation and creativity in an environment that otherwise discourages novelty. By definition, the resolution of hard cases involves the highest amounts of discretion. Empirically, my goal is to measure the extent to which principle-based argumentation (Dworkin 1986) and the motivated search for obscure precedents are characteristic of hard cases. Preliminary results suggest that, at least in Colombia, hard cases are characterized by the former but not by the latter.
+
+However, the initial results from this investigation were lackluster. Abstract discussions of "atypicality" [@uzzi2013] made otherwise interesting discussions---about health care, alimony, fracking, armed conflict---sound stale and one-dimensional. It missed out on all the "backstage" unfolding of political alliances, bargaining, and status seeking. It failed to describe real-world legal problems and how entire teams of lawyers seek to solve them (e.g., a man trying to get his ex-wife to not go forth with their previous plans for in vitro fertilization).
+
+## To add
+
+-   Sleeping Beauty Index
+-   General comment on approach and discretion
+-   Adjudicate between the three network metaphors.
+
+**Significance**
+
+I hope that this project will contribute to a better sociological understanding of what goes on "inside" higher courts, beyond our discipline's typical focus on how power and politics impinge upon on higher courts from the "outside"---i.e., the "law and society" approach [@calavita2016]. I believe that gaining a better understanding of the internal dynamics of higher-courts will help us to hold them accountable in times of uncertainty and massive overturning of precedent, which is the current experience of some countries.[^1]
+
+[^1]: The emphasis on internal dynamics is increasingly common in some parts of cultural sociology [see @kaufman2004], though perhaps the most famous example of such form of explanation is Kuhn's [-@kuhn2012] account of how the accumulation of anomalous findings drives scientific revolutions.
+
+I also hope to make a contribution to discussions among legal scholars about *discretion*, which usually focus on how decision-making *ought* to be and not necessarily how it actually works. Legal scholarship is muddled with disparate accounts of legal reasoning, with some arguing that judges *should* exercise some form of discretion when cases fall within the "fringe of vagueness" (or "area of open texture") of existing rules [@hart2012]. Most notably, there is disagreement on the varying amounts of discretion that judges possess when deciding *hard cases.* Some emphasize the degree of arbitrariness, discretion, and manipulability involved in the process [e.g., @kennedy1991; @levi2013], whereas others emphasize coherency, predictability, and constraint [e.g., @dworkin1986]. As noted by @daston2022 [79], discretion is "perhaps too bland a term for the delicate sense of knowing just when and how to adjust a rule to circumstance or abandon it all together."
+
+**Sample**
+
+I have collected a corpus of 27,541 decisions made by the Colombian Constitutional Court (CCC) for a period of 30 years (1992-2022). The documents are unstructured pieces of text, but they are sufficiently standardized so that it is relatively straightforward to extract citations to past cases. It is also relatively straightforward to extract other features from the text (e.g., word counts, nouns, verbs, dd/mm/yyyy, etc.). Extracting other features, e.g., names of judges and dissenting judges, is less straightforward, but it should also be feasible. I have made this dataset publicly available in an online repository.[^2]
+
+[^2]: <https://github.com/acastroaraujo/ccc_datos>
+
+Each case has a standardized name (e.g., `C-776-03`, `T-025-04`, `SU-1184-01`). The suffix indicates `year`, the infix is an `id`, and the prefix indicates a case `type`. "C" refers to the cases in which the CCC decides whether a law, rule, administrative decision is compatible with constitutional norms---also known as *judicial review.* "T" refers to *tutela*, which is an individual complaint mechanism (or special writ) for the protection of "fundamental rights." These tutelas give people the power to go before any ordinary judge and request the protection of their "fundamental constitutional rights" whenever they are perceived to be threatened [@cepedaespinosa2019, 28]. Each year, the CCC selects approximately 2% of these cases for review, and the final decision may uphold or reverse decisions made by lower courts. A bulk of these cases is related to healthcare and pension payments. Finally, "SU" refers to decisions in which the Court has decided to compile several "T" cases. They're a sort of legally binding "Annual Reviews" for the judicial system in Colombia. Together, these decisions form a complex citation network with nearly 986,181 ties among them.[^3]
+
+[^3]: Some cases contain multiple citations to previous cases.
+
+*Dependent variable.* Literature of on scientific citations has typically taken the *cumulative citation count* as an indicator of innovation because it presumably captures "the extent to which the work was useful to---and valued by---other scholars" [@leahey2014].
+
+*Analysis.* So far I have explored regression models that predict the *cumulative citation count* (in-degree) associated with each decision by taking into account covariates like *time*, *type* (`C`, `SU`, `T`), *outward-citations* (out-degree), and *topic*. The inclusion of "topic" is important necessary because some decision-clusters are obviously more highly cited than others (e.g., health care, social security).
+
+I also included two variables in order to test two main hypothesis: a decision's cumulative citation count will be predicted by the extent of principle-based argumentation (H~1~) and the motivated search for long-forgotten precedents (H~2~). I found evidence for H~1~ but no evidence H~2~.
+
+![Tentative Data Generating Process](images/dag-innovation.png){#fig-innovation-dag alt="Tentative Data Generating Process" fig-align="center" width="70%"}
+
+*Limitations.* There are two current limitations with the previous analysis. First, the classification of cases into topics has been done on an *ad-hoc* basis. I took the document-term matrix of cases-to-words (excluding citations), then did a singular value decomposition, and then did hierarchical clustering on the 300 more informative dimensions. This form of "document embedding" [@grimmer2022] is commonly known as *latent semantic analysis*, but the additional clustering seems hard to justify.
+
+Second, I have now taken better care of drawing out my assumptions about the data generating process in @fig-innovation-dag. Here, the "**`H`**" variable stands for an unobserved "hardness" variable attributed to all cases. It doesn't seem plausible to exclude the authors (i.e., the CCC's composition). Furthermore, if we take this latent construct seriously, we find ourselves dealing with three previously unnoticed collider variables. One of my hopes is that the interview process will help me figure out a more realistic data-generating process.
+
+**Extra To Do**
+
+To do list:
+
+-   Topic models
+
+Re-rerun the topic models (hopefully less K)
+
+Plot: Add relative size and select topics with the big N to show.
+
+-   Chunks
+
+Search the documents for the chunks
+
+-   Get access to google translate packages
+
+-   Validation
+
+Transitional Justice, Gender, Access to health; Inconstitutional State of Affairs.
+
+-   Read
+
+Kennedy
+
+Taking stock: --------------
+
+I have three networks:
+
+1.  case-to-case network
+
+-   Use this to get measures of "success" \[check\]
+-   Use this to get at bridging using the two-mode network trick (transposition, repurposing)
+-   Use this to get the CD index \[check\]
+-   Use this to get at adumbration or motivated search \[See Sleeping Beauty Index: [https://www.pnas.org/content/112/24/7426\]](https://www.pnas.org/content/112/24/7426])
+-   Use this to find communities, which *should* resemble topics. Vilhena et al (2014) use something called the "map equation".
+
+2.  case-to-topics network
+
+-   Use this to get at bridging (transposition, repurposing)
+-   Use this to get at atypicality
+
+3.  case-to-chunks network
+
+-   Use this to get at atypicality
+-   Use this to get at bridging (transposition, repurposing) \[?\]
+
+Misc. ----------------------
+
+Can I get at bridging by combining topic models with citations? Can I use blockmodeling to find exemplars and other "roles"? For examples, procedural cases should have a "role" of their own because they should be heavily cited across domains...
+
+Where is the variation in the network?
+
+For example, I should be able to show that the CCC relied on some combination of principles when discussing a particular topic in the past (e.g., “gender discrimination”), but that it now relies on some other combination of principles.
+
+Are the atypicallity and cultural holes approaches just versions of the same underlying theme? See Lizardo (2014) Fig. 1. He uses ego-networks that join cultural forms and applies similar measures to the structural hole approach. Egos that join disjointed cultural forms are bridges. The atypicallity approach, on the other hand, focuses on conventional and atypical pairings (or *ties*) between cultural forms (e.g., keywords, journals). Egos that combine in an optimal way conventional and atypical pairings do better for themselves in terms of citations ("success").
+
+As a sanity check: cases that decide procedural issues are prime candidates for being cultural holes.
+
+There's an argument (i.e., the junkyard argument) that at any given time we shouldn't be considering the whole network. Two alternatives: the 2-mode time slice projection vs using some form of decay factor that affects citations that have not been cited in a while.
+
+How to address polisemy? A good argument can be made that larger articles get more cited because there's more risk of polisemy.
+
+Spin offs --------------------
+
+Who are the innovative judges? What are the effects of explicitly synthetic decisions (SU cases)?
+
+## Stuff I removed
+
+The approach I take is very different to the usual "law and society" approach [@calavita2016], which prioritizes the law's entanglement with different forms of inequality (e.g., class, gender, race). These scholars tend to see the law as a reflection (or rationalization) of broader power dynamics. The difference in approach is reminiscent of the opposition between "legal formalism" and "legal realism", which deals with the thorny question of whether law can be differentiated from politics. Formalists emphasize internal dynamics, whereas realists emphasize exogenous dynamics (e.g., electoral politics, public opinion, economics, social movements). This article prioritizes internal dynamics but does not engage in the more difficult question of adjudicating between "formalism" and "realism"---an opposition which @tamanaha2009 argues to be more a caricature than an actual description of how lawyers think about their own practice.
+
+The emphasis on internal dynamics is increasingly common in some parts of cultural sociology [see @kaufman2004], though perhaps the most famous example of such form of explanation is Kuhn's [-@kuhn2012] account of how the accumulation of anomalous findings drives scientific revolutions. With regards to legal reasoning, Arthur Stinchcombe [-@stinchcombe2001] has noted that when sociologists study "formal structures"---e.g., legal reasoning---they either focus on the fact that (1) they seem inconsequential or (2) that they serve some pathological purpose. But this perspective---more common in research that emphasizes external dynamics---"does not have the guts of institutions in it" [@stinchcombe1997, pp. 17]; most people inside organizations are not all that cynical and---for the most part---judges are interested in having legal cases "handled right" (i.e., in conformity with professional standards and norms). In other words, the people who serve as "the guts of institutions" hold organizations accountable to their values.
+
+The argument I'm trying to make is that---beyond the focus on power and politics---it is important to pay attention to the "guts of institutions" as part of a larger explanation of legal change and innovation, which also includes "realist" conceptions of how the law operates. It seems obvious that extra-legal interests and considerations play an important role. But the importance of these extrinsic interests is itself an empirical question. So, by focusing only on the written texts, I'm highlighting the type of internal dynamics that usually get ignored by social science research.
+
+...
+
+Ronald Dworkin [-@dworkin1986] describes the process of legal reasoning with a metaphor that I believe is amenable to network analysis: the *chain novel* as an endogenous mechanism of constraint.
+
+> In this enterprise a group of novelists writes a novel *seriatim*; each novelist in the chain interprets the chapters he has been given in order to write a new chapter, which is then added to what the next novelist receives, and so on. Each has the job of writing his chapter so as to make the novel being constructed the best it can be, and the complexity of this task models the complexity of deciding a hard case under law as integrity.
+>
+> @dworkin1986 [pp. 229]
+
+...
+
+Note that there seems to be an inverse relation between the number of `T` and `SU` decisions, which makes sense because the whole purpose of `SU` decisions is to consolidate the arguments established by `T` decisions and thus the judges might prioritize one type over the other at different times. The appendix contains a more detailed description of cross-type citations, but it is worth noting that `T` and `SU` decisions are in fact intimately linked: 67% of the outward citations in `SU` decisions target past `T` decisions and that 84% of the inward citations in `SU` decisions come from future `T` decisions.

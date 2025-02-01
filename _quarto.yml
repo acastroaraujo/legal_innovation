@@ -1,0 +1,44 @@
+project:
+  title: "Innovation in Constitutional Decision-Making"
+  output-dir: "docs"
+
+format: 
+  html: 
+    mainfont: Amiri
+    embed-resources: true
+  pdf:
+    toc: false
+    number-sections: true
+    mainfont: Crimson Text
+    linestretch: 1.5
+    # citations and links
+    colorlinks: true
+    link-citations: true
+    linkcolor: RoyalBlue
+    urlcolor: RoyalBlue
+    citecolor: RoyalBlue
+    # Other
+    pdf-engine: pdflatex
+    header-includes:
+      ## Line numbers
+      - \usepackage[left,modulo]{lineno}
+      - \linenumbers
+      ## Paragraph indentation
+      - \usepackage{indentfirst}
+      - \setlength{\parindent}{24pt}
+      ## Footnotes
+      - \usepackage[hang,flushmargin]{footmisc}
+      - \setlength{\footnotemargin}{1em}
+      - \setlength{\footnotesep}{1.6em}
+      - \renewcommand{\footnotelayout}{\setstretch{1.33}}
+      - \renewcommand{\footnotesize}{\small} 
+      ## Epigraph
+      - \usepackage{epigraph}
+      - \renewcommand{\epigraphrule}{0em}
+      - \setlength{\epigraphwidth}{20em}
+    csl: american-sociological-association.csl
+
+execute:
+  freeze: auto
+
+engine: knitr
