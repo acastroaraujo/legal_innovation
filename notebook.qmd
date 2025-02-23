@@ -3,6 +3,14 @@ title: "Notebook"
 format: html
 ---
 
+## Add More Dworkin on Principles
+
+See in particular Shapiro (2011, pp. 301).
+
+## Newness Variable
+
+Density at time of birth. 
+
 ## General
 
 The second project studies judicial discretion by looking at hard cases. These are cases for which the result is not clearly dictated by statute or precedent. Importantly, these cases create a pressure for innovation and creativity in an environment that otherwise discourages novelty. By definition, the resolution of hard cases involves the highest amounts of discretion. Empirically, my goal is to measure the extent to which principle-based argumentation (Dworkin 1986) and the motivated search for obscure precedents are characteristic of hard cases. Preliminary results suggest that, at least in Colombia, hard cases are characterized by the former but not by the latter.
