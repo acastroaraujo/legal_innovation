@@ -7,6 +7,10 @@ format: html
 
 See in particular Shapiro (2011, pp. 301).
 
+## Raz 
+
+https://doi.org/10.1093/acprof:oso/9780199562688.003.0012 
+
 ## Newness Variable
 
 Density at time of birth. 

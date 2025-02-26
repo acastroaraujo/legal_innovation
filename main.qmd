@@ -35,15 +35,15 @@ This article is a first attempt to integrate insights from both legal theory and
 
 ## Hard cases and innovation
 
-Legal scholarship is muddled with disparate accounts of legal reasoning [see @leiter2007; @schauer2009; @shapiro2011]. On one extreme, there is a "formalist" camp that claims that judges have *no discretion* whatsoever when faced with legal problems, since professional norms compel them to apply "the letter" of the law regardless of their own personal beliefs about the correct decision. On the other extreme there is a "realist" camp that claims judges exercise *unfettered discretion* to reach results based on the personal idiosyncrasies and values, which then receives proper justification in the form of legal argument. A caricature version of this view holds that judicial decisions are a matter of “what the judge had for breakfast,” but more often than not the argument is that self-interest, ideology, and personal views of morality determine the outcome of a ruling.
+Legal scholarship is muddled with disparate accounts of legal reasoning [see @leiter2007; @schauer2009; @shapiro2011]. On one extreme, there is a "formalist" camp that claims that judges have *no discretion* whatsoever when faced with legal problems, since professional norms compel them to apply "the letter" of the law regardless of their own personal beliefs about the correct decision. On the other extreme there is a "realist" camp that claims judges exercise *unfettered discretion* to reach results based on their personal idiosyncrasies and values, which then receives proper justification in the form of legal argument. A caricature version of this view holds that judicial decisions are a matter of “what the judge had for breakfast,” but more often than not the argument is that self-interest, ideology, and personal views of morality determine the outcome of a ruling.
 
-In between these two extremes is a view committed to the *partial indeterminacy* of law. The idea is that "the letter" of the law will remain awkwardly silent in various cases because the meaning of written-language itself is indeterminate in "fringe" circumstances. @hart2012 calls this the open-texture of language, which means that the enforcement of seemingly unambiguous rules, such as "no vehicles in the park," suddenly becomes rife with indeterminacy when the vehicle in question is an electric scooter or an ambulance. Thus, any individual authorized to determine whether somethingcounts as "vehicle" (in the case of the electric scooter), or whether an exception needs to be made (in the case of the ambulance), becomes a *rule-maker*. And since no set of rules—no matter how precisely they are articulated—can fully determine their future application [@daston2022], some degree of discretion in the interpretation of laws is inevitable.
+In between these two extremes is a view committed to the *partial indeterminacy* of law. The idea is that "the letter" of the law will remain awkwardly silent in various cases because the meaning of written-language itself is indeterminate in "fringe" circumstances. @hart2012 calls this the open-texture of language, which means that the enforcement of seemingly unambiguous rules, such as "no vehicles in the park," suddenly becomes rife with indeterminacy when the vehicle in question is an electric scooter or an ambulance. Thus, any individual authorized to determine whether something counts as "vehicle" (in the case of the electric scooter), or whether an exception needs to be made (in the case of the ambulance), becomes a *rule-maker*. And since no set of rules—no matter how precisely they are articulated—can fully determine their future application [@daston2022], some degree of discretion in the interpretation of laws is inevitable.
 
-Importantly, the legal system has various screening devices that make it so that "easy cases" do not enter the formal adjudicative process. Easy cases rarely get disputed; lawyers tell their clients when they have no legal claim on a matter; requests for appeal are denied; etc. As a result, cases that do end up in court are typically those in which opposing parties *both* believe theyhave a reasonable chance of getting what they want [@priest1984]. This "selection effect" is even stronger as cases make their way up the hierarchy of the appellate court system.
+Importantly, the legal system has various screening devices that make it so that "easy cases" do not enter the formal adjudicative process. Easy cases rarely get disputed; lawyers tell their clients when they have no legal claim on a matter; requests for appeal are denied; etc. As a result, cases that do end up in court are typically those in which opposing parties *both* believe they have a reasonable chance of getting what they want [@priest1984]. This "selection effect" is even stronger as cases make their way up the hierarchy of the appellate court system.
 
-In sum, the "law" is up for grabs at the highest echelons of the judicial system because it is here where we find the highest amount of discretion. But this does not answer the question of *how* to characterize the exercise of judicial discretion, which carries two very different connotations. On the one hand, discretion carries the implication of *arbitrariness*, malfeasance, and self-serving behavior. On the other hand, discretion is also the name of an intellectual virtue, it is associated with practical wisdom, "good judgment," and *expertise*. It is in this second sense that “*discretion* is perhaps too bland a term for the delicate sense of knowing just when and how to adjust a rule to circumstance or abandon it all together” [@daston2022, 79].
+Thus, according to the partial indeterminacy view, the "law" is up for grabs at the highest echelons of the judicial system because it is here where we find the highest amount of discretion. But this does not answer the question of *how* to characterize the exercise of judicial discretion, which carries two very different connotations. On the one hand, discretion carries the implication of *arbitrariness*, malfeasance, and self-serving behavior. On the other hand, discretion is also the name of an intellectual virtue, it is associated with practical wisdom, "good judgment," and *expertise*. It is in this second sense that “*discretion* is perhaps too bland a term for the delicate sense of knowing just when and how to adjust a rule to circumstance or abandon it all together” [@daston2022, 79].
 
-However, regardless of how we wish to characterize the exercise of judicial discretion, the fact of the matter is that legal opinions are written in expert language. At the very least, any appellate judge must persuade the other members of the court that their reasoning is in conformity with professional standards and legal norms. For example, various accounts of legal reasoning is the idea that hard cases are decided on the basis of *principles* and *standards,* which serve as either rule-*creating* or rule-*avoiding* norms in the evolution of legal precedent [@schauer1988, 519; @dworkin1975].
+However, regardless of how we wish to characterize the exercise of judicial discretion, the fact of the matter is that legal opinions are written in expert language. At the very least, any appellate judge must persuade the other members of the court that their reasoning is in conformity with professional standards and legal norms. For example, various accounts of legal reasoning is the idea that hard cases are decided on the basis of *principles* and *standards,* which serve as either rule-*creating* or rule-*avoiding* norms in the evolution of legal precedent [@schauer1988, 519; cf. @dworkin1975].
 
 Principles and standards are "thick" rules [@daston2022, 56]. They are abstract and often vague in their use of words like "reasonable" or "democratic." Since they are so broad, they also tend to offer competing guidance in the resolution of particular cases. For example, “freedom of speech" might collide with the “no harm" principle in various circumstances—e.g., in cases regarding hate speech, or in the famous "no shouting fire in crowded movie theaters."
 
@@ -97,7 +97,7 @@ In order to understand how test the two hypothesis described above, I compare a 
 
 The next two sections describe how I created the measurements related to $H_1$ and $H_2$.
 
-### H~1~: Principle-based argumentation
+## H~1~: Principle-based argumentation
 
 The goal here is to create measurements that can describe the extent to which a decision is engaging in principle-based argumentation. In order to do this I first used *regular expressions* to extract a list of $238$ principles and $510$ rights and then looked for them within each case. I looked for principles *and* rights because they're intimately tied together—e.g., some describe principles as "propositions that describe rights" [@dworkin1975, 1067].
 
@@ -126,7 +126,7 @@ My operationalization of "principle based-argumentation" for this particular dec
 
 I do this for every single case in the network.
 
-### H~2~: Search for long-forgotten precedents
+## H~2~: Search for long-forgotten precedents
 
 In order to measure the motivated search for long-forgotten cases I looked at the references contained in each decision and counted the number of days that had passed since each of these references was cited elsewhere. I then proceeded to count the number of "long-forgotten" references by counting how many of them occurred above a year-specific threshold (i.e., the 99^th^ percentile of the distribution of days).
 
@@ -142,12 +142,12 @@ This measurement is henceforth labeled "adumbration" but it should be noted that
 
 [^3]: See @gelman2020 [174-8] for a discussion of the *expected log predictive density (ELPD)* as a measure of model fit.
 
-| Model | ELPD (difference) | Standard Error (difference) |
-|------------------------|------------------------|------------------------|
-| H~1~ and H~2~ | $0.00$ | $0.00$ |
-| Just H~1~ | $-1.11$ | $2.57$ |
-| Just H~2~ | $-427.80$ | $37.21$ |
-| Baseline model, without variables for principle-based argumentation (H~1~) and adumbration (H~2~) | $-431.40$ | $37.33$ |
+| Model          | ELPD (difference) | Standard Error (difference) |
+|----------------|-------------------|-----------------------------|
+| H~1~ and H~2~  | $0.00$            | $0.00$                      |
+| H~1~           | $-1.11$           | $2.57$                      |
+| H~2~           | $-427.80$         | $37.21$                     |
+| Baseline model | $-431.40$         | $37.33$                     |
 
 : Differences in expected log predictive density (ELPD) between models, relative to the model with the highest ELPD. {#tbl-results}
 
