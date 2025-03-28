@@ -1,3 +1,17 @@
+Add third mechanism:
+
+- newness, as given by the surrounding semantic density. 
+
+Do something with new variables
+
+- rj, chamber
+
+Add new things on precedent.
+
+- C-370 del 2006, C-455-06, Jaime Araújo Rentería
+
+Technical stuff:
+
 -   Clarify ELPD vs AIC
 
     https://discourse.mc-stan.org/t/understanding-looic/13409/12
