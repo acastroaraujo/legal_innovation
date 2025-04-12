@@ -1,14 +1,20 @@
 Add third mechanism:
 
-- newness, as given by the surrounding semantic density. 
+-   newness, as given by the surrounding semantic density.
 
 Do something with new variables
 
-- rj, chamber
+-   rj, chamber
 
 Add new things on precedent.
 
-- C-370 del 2006, C-455-06, Jaime Araújo Rentería
+-   C-370 del 2006, C-455-06, Jaime Araújo Rentería
+
+More on innovation:
+
+-   The Court explicitly advocates for the usage of "principle-based argumentation" in the resolution of hard cases. They do this self-consciously.
+
+    This is important. Driven by distrust towards the other branches of government, the court has "innovated" in the sense that it has claimed decision-making power (aka discretion) in its creation of structural injunctions and the "substitution of the constitution doctrine." This can be thought of as discretion regarding the "role function" of the Court.
 
 Technical stuff:
 
