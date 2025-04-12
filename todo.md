@@ -10,6 +10,8 @@ Add new things on precedent.
 
 -   C-370 del 2006, C-455-06, Jaime Araújo Rentería
 
+-   With regards to the creation of a system of precedent, and the co-ocurrence figure in the main text, see Cepeda Espinosa (2017), particularly pages 32-42 on how the Court created this in a civil law country.
+
 More on innovation:
 
 -   The Court explicitly advocates for the usage of "principle-based argumentation" in the resolution of hard cases. They do this self-consciously.
