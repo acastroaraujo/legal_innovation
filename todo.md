@@ -18,6 +18,8 @@ More on innovation:
 
     This is important. Driven by distrust towards the other branches of government, the court has "innovated" in the sense that it has claimed decision-making power (aka discretion) in its creation of structural injunctions and the "substitution of the constitution doctrine." This can be thought of as discretion regarding the "role function" of the Court.
 
+-   The thing about innovation in constitutional settings is that, unlike Science and Technology, it is not aimed at "discovery" and there's little "matter of factness" about the correctness of some innovation. Unlike the arts, which are aimed at aesthetic innovation, it is less so. Law is aimed at problem-solving, but since there's no correct to solution to any given problem, innovation has to do with the use of discretionary power. You can think of innovation in terms of asserting more decision-making power, or using whatever it has to make law.
+
 Technical stuff:
 
 -   Clarify ELPD vs AIC
